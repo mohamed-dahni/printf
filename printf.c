@@ -1,6 +1,6 @@
 #include <stdarg.h>
-#include "main.h"
 #include <unistd.h>
+#include "main.h"
 
 /**
  * _printf - function that produces output according to a format
@@ -33,8 +33,8 @@ int _printf(char *format, ...)
 			} else if (*format == 's')
 			{
 				s = va_arg(args, char*);
-				write(STDOUT_FILENO, s, strlen(s));
-				bytes += strlen(s);
+				write(STDOUT_FILENO, s, _strlen(s));
+				bytes += _strlen(s);
 			}
 		} else
 		{
