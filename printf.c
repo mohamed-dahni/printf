@@ -1,8 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
-#include <string.h>
 #include <unistd.h>
-#include <stdio.h>
 
 int _printf(char *format, ...)
 {
