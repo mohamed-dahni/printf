@@ -2,13 +2,22 @@
 #include "main.h"
 #include <unistd.h>
 
+/**
+ * _printf - function that produces output according to a format
+ * @format: character string
+ * @...: arguments
+ * Return: Always success
+ */
+
 int _printf(char *format, ...)
 {
 	int bytes = 0;
 	char c;
 	char *s;
-    va_list args;
-    va_start(args, format);
+
+	va_list args;
+
+	va_start(args, format);
 
 	while (*format != '\0')
 	{
@@ -29,7 +38,7 @@ int _printf(char *format, ...)
 			}
 		} else
 		{
-			c = *format; 
+			c = *format;
 			write(STDOUT_FILENO, &c, sizeof(char));
 			bytes += sizeof(char);
 		}
@@ -37,7 +46,7 @@ int _printf(char *format, ...)
 		format++;
 	}
 
-    va_end(args);
+	va_end(args);
 
-	return bytes;
+	return (bytes);
 }
